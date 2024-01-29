@@ -1,0 +1,7 @@
+[
+    {
+        "directory": "/workspaces/ExtendingPython/ext_with_pybind11",
+        "command": "clang++ -shared -fPIC -std=c++17 -I/root/miniconda3/envs/extend/include/python3.10 -I/root/miniconda3/envs/extend/lib/python3.10/site-packages/pybind11/include ext_module.cc -o mymodule.so -L/root/miniconda3/envs/extend/lib/python3.10/config-3.10-x86_64-linux-gnu -L/root/miniconda3/envs/extend/lib  -lcrypt -lpthread -ldl  -lutil -lm -lm ",
+        "file": "/workspaces/ExtendingPython/ext_with_pybind11/ext_module.cc"
+    }
+]
