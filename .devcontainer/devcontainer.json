@@ -14,10 +14,11 @@
                 // Python tools
                 "ms-python.python",
                 "charliermarsh.ruff",
-                // General Tools
+                // General tools
                 "eamodio.gitlens",
                 "streetsidesoftware.code-spell-checker",
-                "ionutvmi.path-autocomplete"
+                "ionutvmi.path-autocomplete",
+                "yzhang.markdown-all-in-one"
             ]
         }
     },
