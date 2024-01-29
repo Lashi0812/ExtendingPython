@@ -1,7 +1,7 @@
 #include <pybind11/pybind11.h>
 #include <string>
 
-int add(int x, int y) { return x + y; }
+int add_two_num(int x, int y) { return x + y; }
 
 struct Human {
     std::string name;
@@ -12,7 +12,7 @@ struct Human {
 
 PYBIND11_MODULE(ext_module, m) {
     m.doc() = "Extending python using pybind11";
-    m.def("add", &add, "Add Two integer");
+    m.def("add", &add_two_num, "Add Two integer");
 
     pybind11::class_<Human>(m, "Human")
       .def(pybind11::init<const std::string &>()) //? constructor
