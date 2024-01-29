@@ -1,0 +1,35 @@
+{
+    "name":"ExtendingPython",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "context": ".."},
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                // C++ tools
+                "ms-vscode.cpptools",
+                "llvm-vs-code-extensions.vscode-clangd",
+                "ms-vscode.cmake-tools",
+                "StackBuild.bazel-stack-vscode",
+                // Python tools
+                "ms-python.python",
+                "charliermarsh.ruff",
+                // General Tools
+                "eamodio.gitlens",
+                "streetsidesoftware.code-spell-checker",
+                "ionutvmi.path-autocomplete"
+            ]
+        }
+    },
+    "features": {
+        "./zsh-plugins": {
+            "plugins": "zsh-syntax-highlighting zsh-autosuggestions bazel",
+            "omzPlugins": "https://github.com/zsh-users/zsh-syntax-highlighting https://github.com/zsh-users/zsh-autosuggestions"
+        }
+    },
+    "mounts": [
+        "source=/mnt/drive/data,target=/mnt/data,type=bind,consistency=cached",
+        "source=projectname-bashhistory,target=/commandhistory,type=volume"
+    ],
+    "runArgs": ["--gpus","all"]
+}

@@ -1,0 +1,12 @@
+name: extend  # Name of the conda environment
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.10
+  - ipykernel
+  - ipywidgets
+  - cython
+  - numpy
+  - pybind11
+  - typer[all]
