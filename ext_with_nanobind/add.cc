@@ -1,7 +1,11 @@
 #include "nanobind/nanobind.h"
 
-int add(int a, int b) { return a + b; }
+namespace nb = nanobind;
+using namespace nb::literals;
 
-NB_MODULE(ext_nano, m){
-    m.def("add",&add);
+int add(int a, int b = 1) { return a + b; }
+
+NB_MODULE(ext_nano, m) {
+    m.def("add", &add, "a"_a, "b"_a = 1);
+    m.attr("export_value") = 42;
 }
