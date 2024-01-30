@@ -1,0 +1,1 @@
+nanobind_add_module(ext_nano NOMINSIZE add.cc)

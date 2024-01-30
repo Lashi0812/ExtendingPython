@@ -10,3 +10,5 @@ dependencies:
   - numpy
   - pybind11
   - typer[all]
+  - ipykernel
+  - ipywidgets
