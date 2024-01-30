@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.15...3.27)
 project(ext_nanobind LANGUAGES CXX)
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+set(Python_EXECUTABLE "/root/miniconda3/envs/extend/bin/python")
 # set(CMAKE_CUDA_USE_RESPONSE_FILE_FOR_INCLUDES 0)
 # set(CMAKE_COLOR_DIAGNOSTICS ON)
 

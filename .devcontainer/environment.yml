@@ -1,9 +1,15 @@
 name: extend  # Name of the conda environment
 channels:
   - defaults
+  - nvidia
+  - pytorch-nightly
   - conda-forge
 dependencies:
   - python=3.10
+  - pytorch 
+  - pytorch-cuda=12.1 
+  - torchvision 
+  - torchaudio
   - ipykernel
   - ipywidgets
   - cython
