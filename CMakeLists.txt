@@ -4,9 +4,7 @@ find_package(CUDAToolkit REQUIRED)
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(CMAKE_CUDA_USE_RESPONSE_FILE_FOR_INCLUDES 0)
-set(Python_EXECUTABLE "/root/miniconda3/envs/extend/bin/python")
-# set(CMAKE_CUDA_USE_RESPONSE_FILE_FOR_INCLUDES 0)
-# set(CMAKE_COLOR_DIAGNOSTICS ON)
+# set(Python_EXECUTABLE "/root/miniconda3/envs/extend/bin/python")
 
 find_package(Python 3.8 COMPONENTS Interpreter Development.Module REQUIRED)
 
