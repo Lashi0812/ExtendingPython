@@ -8,6 +8,15 @@ namespace nb = nanobind;
 
 const float data[] = {1, 2, 3, 4, 5, 6, 7, 8};
 
+template<typename T>
+__global__ void mul_5(T *data){
+  data[0] = data[0] * 5; 
+}
+
+void gpu_process(nb::ndarray<uint8_t, nb::shape<nb::any, nb::any>, nb::device::cuda> data) {
+  mul_5<<<1,1>>>(data.data());
+}
+
 NB_MODULE(narray, m) {
     m.def("inspect", [](nb::ndarray<> a) {
         printf("Array data pointer : %p\n", a.data());
@@ -26,6 +35,8 @@ NB_MODULE(narray, m) {
           int(a.dtype() == nb::dtype<int16_t>()),
           int(a.dtype() == nb::dtype<uint32_t>()),
           int(a.dtype() == nb::dtype<float>()));
+        
+        printf("Array num of bytes : %zu\n",a.nbytes());
     });
 
     m.def(
@@ -33,10 +44,7 @@ NB_MODULE(narray, m) {
           data(0, 0) = (uint8_t)data(0, 0) * 5;
       });
 
-    m.def(
-      "gpu_process", [](nb::ndarray<uint8_t, nb::shape<nb::any, nb::any>, nb::device::cuda> data) {
-          // data(0, 0) = (uint8_t)data(0, 0) * 5;
-      });
+    m.def("gpu_process", &gpu_process);
 
     m.def("ret_numpy", []() {
         size_t shape[2] = {2, 4};
